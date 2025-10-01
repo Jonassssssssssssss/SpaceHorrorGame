@@ -18,6 +18,12 @@ public class MovementOptions : MonoBehaviour
         else VisualSwich(false);
     }
 
+    public void Move(string locationName)
+    {
+        if (locationName == "StartArea") GM.CurrentLocation = GameManager.Location.StartArea;
+        if (locationName == "Base") GM.CurrentLocation = GameManager.Location.Base;
+    }
+
     void VisualSwich(bool active)
     {
         if (active)
