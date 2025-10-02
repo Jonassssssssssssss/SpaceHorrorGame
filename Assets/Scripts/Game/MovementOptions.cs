@@ -4,12 +4,14 @@ public class MovementOptions : MonoBehaviour
 {
     [SerializeField] GameManager.Location _location = GameManager.Location.StartArea;
     GameManager GM;
+    PlayerAnim PA;
 
     [SerializeField] GameObject[] _visuals;
 
     void Start()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        PA = GameObject.Find("Player").GetComponent<PlayerAnim>();
     }
 
     void Update()
@@ -22,6 +24,9 @@ public class MovementOptions : MonoBehaviour
     {
         if (locationName == "StartArea") GM.CurrentLocation = GameManager.Location.StartArea;
         if (locationName == "Base") GM.CurrentLocation = GameManager.Location.Base;
+        if (locationName == "Field") GM.CurrentLocation = GameManager.Location.Field;
+
+        PA.SwitchAnim(locationName);
     }
 
     void VisualSwich(bool active)
