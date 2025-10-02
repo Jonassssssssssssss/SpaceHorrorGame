@@ -25,6 +25,7 @@ public class MovementOptions : MonoBehaviour
         if (locationName == "StartArea") GM.CurrentLocation = GameManager.Location.StartArea;
         if (locationName == "Base") GM.CurrentLocation = GameManager.Location.Base;
         if (locationName == "Field") GM.CurrentLocation = GameManager.Location.Field;
+        if (locationName == "ResearchPad") GM.CurrentLocation = GameManager.Location.ResearchPad;
 
         PA.SwitchAnim(locationName);
     }
